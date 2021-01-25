@@ -14,7 +14,7 @@ class ROI: #Class definition
         
         income_cont = input("Will you charge for laundry, storage, parking, or any other miscellaneous fees? \nY/N: ")
         if income_cont.lower() == "y": #Finds other common income scenarios
-            print("\nWe'll go line by line for other common income scenarios. If any of these do not apply to you, please input 0:")
+            print("\nOk! We'll go line by line for other common income scenarios.\n If any of these do not apply to you, please input 0:\n")
             while True:
                 try: 
                     laundry = int(input("How much do you expect to make from laundry services?: \n$"))
@@ -30,7 +30,7 @@ class ROI: #Class definition
         
         self.income = self.rent+other #totals rent+other items
         print(f"\nYou can expect to receive ${self.income} as income from this property each month\n")
-        print("__________________________________________________")
+        print("__________________________________________________\n")
 
 
     #Box #2
@@ -91,7 +91,7 @@ class ROI: #Class definition
     def gather_cash_flow(self):
         monthly_cashflow = self.income-self.expenses
         self.cash_flow = monthly_cashflow
-        print(f"\nYour monthly cashflow on this property is ${self.cash_flow}\n")
+        print(f"\nBy subtracting your monthly expenses from your income, we've determined that\nYour monthly cashflow on this property is ${self.cash_flow}\n")
         print("__________________________________________________")
 
 
@@ -114,7 +114,7 @@ class ROI: #Class definition
             rehab_costs = 0
         other_costs = int(input("If there were any additional one-time costs on this property, please enter them now, otherwise put 0: \n$"))
         total_invest = down+closing_costs+rehab_costs+other_costs  
-        print(f"Your total investment into this property has been ${total_invest}\n")
+        print(f"\nYour total investment into this property has been ${total_invest}\n")
         #final caclulation of ROI
         yearly_cashflow = self.cash_flow *12
         roi_percentage = yearly_cashflow/total_invest *100
